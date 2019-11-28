@@ -12,3 +12,6 @@ A chatroom made by me and some friends for our final project in our Networking c
 # TODO
     Need to make a GUI for the chatroom
     Make chat update live
+    
+# Libraries
+    
