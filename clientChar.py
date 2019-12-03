@@ -28,7 +28,7 @@ username = my_userName.encode('utf-8')
 username_header = f"{len(username):<{HEADER_LENGTH}}".encode('utf-8')
 client_socket.send(username_header + username)
 
-while True:
+while message.lower().strip() != 'exit':
     message = input(f"{my_userName} > ")  #TODO fix
 
     # if message is not empty => send it
