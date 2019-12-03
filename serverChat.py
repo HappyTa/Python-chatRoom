@@ -18,8 +18,8 @@ server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Reuse same port to avoid port already occupied
 server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-server_socket.bind((IP, PORT))
-server_socket.listen()  # server start listening for TCP request
+server_socket.bind((IP, PORT))      # Bind IP and PORT and get socket ready to receive requests
+server_socket.listen()              # server start listening for TCP request
 
 sockets_list = [server_socket]
 

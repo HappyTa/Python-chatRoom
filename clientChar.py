@@ -11,14 +11,17 @@ import errno
 import sys
 
 # setup
+IP = input('Enter Server IP: ')
+
+
 HEADER_LENGTH = 10
-IP = '10.220.34.43'
+
 PORT = 1234
 my_userName = input('Username: ')  # Retrieve user's name
 
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)       # Create a socket
-client_socket.connect((IP, PORT))                                       # Connect to It's IP and Port
+client_socket.connect((IP, PORT))                                       # Connect to server's IP and Port
 client_socket.setblocking(False)                                        # setblocking is false so .recv() wont block, it'll just return exception which can be handle
 
 username = my_userName.encode('utf-8')
@@ -26,7 +29,7 @@ username_header = f"{len(username):<{HEADER_LENGTH}}".encode('utf-8')
 client_socket.send(username_header + username)
 
 while True:
-    message = input(f"{my_userName} > ")
+    message = input(f"{my_userName} > ")  #TODO fix
 
     # if message is not empty => send it
     if message:
@@ -61,5 +64,5 @@ while True:
 
     except Exception as e:
         # Any other exception - something happened, exit
-        print('Reading error: '.format(str(e)))
+        print('Normal error: '.format(str(e)))
         sys.exit()
