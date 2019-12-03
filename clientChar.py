@@ -11,8 +11,11 @@ import errno
 import sys
 
 # setup
+IP = input('Enter Server IP: ')
+
+
 HEADER_LENGTH = 10
-IP = '10.220.34.43'
+
 PORT = 1234
 my_userName = input('Username: ')  # Retrieve user's name
 
